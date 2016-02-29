@@ -46,6 +46,9 @@ def customizeHLTforCMSSW(process, menuType="GRun"):
     elif (menuType == "PRef"):
         from HLTrigger.Configuration.CustomConfigs import L1TPRef
         process = L1TPRef(process)
+    else:
+        from HLTrigger.Configuration.CustomConfigs import L1TGRun
+        process = L1TGRun(process)
 
 #   replace converted l1extra=>l1t plugins which are not yet in ConfDB
     replaceList = {
